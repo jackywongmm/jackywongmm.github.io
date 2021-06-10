@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>结构文件 | Jacky`s FE</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="Just Do It！">
+    
+    <link rel="preload" href="/assets/css/0.styles.b23bcaa9.css" as="style"><link rel="preload" href="/assets/js/app.30362598.js" as="script"><link rel="preload" href="/assets/js/2.3fd4457c.js" as="script"><link rel="preload" href="/assets/js/12.a09f09f1.js" as="script"><link rel="prefetch" href="/assets/js/10.bd2093a6.js"><link rel="prefetch" href="/assets/js/11.d6e5db77.js"><link rel="prefetch" href="/assets/js/13.47e66820.js"><link rel="prefetch" href="/assets/js/14.d4c0cb52.js"><link rel="prefetch" href="/assets/js/3.e139b410.js"><link rel="prefetch" href="/assets/js/4.e6e1be5a.js"><link rel="prefetch" href="/assets/js/5.1a882ac0.js"><link rel="prefetch" href="/assets/js/6.3f71daef.js"><link rel="prefetch" href="/assets/js/7.9576fed5.js"><link rel="prefetch" href="/assets/js/8.64185bf8.js"><link rel="prefetch" href="/assets/js/9.1301efc2.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.b23bcaa9.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/gratisography-346H.jpg" alt="Jacky`s FE" class="logo"> <span class="site-name can-hide">Jacky`s FE</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/vue/" class="nav-link router-link-active">
+  Vue2.x
+</a></div><div class="nav-item"><a href="/vue3/" class="nav-link">
+  Vue3.x
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/vue/" class="nav-link router-link-active">
+  Vue2.x
+</a></div><div class="nav-item"><a href="/vue3/" class="nav-link">
+  Vue3.x
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>准备工作</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/vue/prepare/" aria-current="page" class="sidebar-link">开始</a></li><li><a href="/vue/prepare/directory_structure.html" aria-current="page" class="active sidebar-link">结构文件</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vue/prepare/directory_structure.html#整体结构" class="sidebar-link">整体结构</a></li><li class="sidebar-sub-header"><a href="/vue/prepare/directory_structure.html#核心结构" class="sidebar-link">核心结构</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="结构文件"><a href="#结构文件" class="header-anchor">#</a> 结构文件</h1> <h2 id="整体结构"><a href="#整体结构" class="header-anchor">#</a> 整体结构</h2> <div class="language- extra-class"><pre class="language-text"><code>src
+├── compiler        # 编译相关 
+├── core            # 核心代码 
+├── platforms       # 不同平台的支持
+├── server          # 服务端渲染
+├── sfc             # .vue 文件解析
+├── shared          # 共享代码
+
+</code></pre></div><h3 id="compiler"><a href="#compiler" class="header-anchor">#</a> compiler</h3> <p>compiler 目录包含 Vue.js 所有编译相关的代码。它包括把模板解析成 ast 语法树，ast 语法树优化，代码生成等功能。</p> <h3 id="core"><a href="#core" class="header-anchor">#</a> core</h3> <p>core 目录包含了 Vue.js 的核心代码，包括内置组件、全局 API 封装，Vue 实例化、观察者、虚拟 DOM、工具函数等等。</p> <p>这里的代码是 Vue.js 的核心代码，也是通常提到的双向绑定的实现原理。</p> <h3 id="platform"><a href="#platform" class="header-anchor">#</a> platform</h3> <p>Vue.js 是一个跨平台的 MVVM 框架，它可以跑在 web 上，也可以配合 weex 跑在 native 客户端上。platform 是 Vue.js 的入口，2 个目录代表 2 个主要入口，分别打包成运行在 web 上和 weex 上的 Vue.js。web即我们前端开发使用的版本,weex为和阿里合作开发的一个跨平台版本，因为运行环境的改变主要是对编译和runtime的更改。</p> <h3 id="server"><a href="#server" class="header-anchor">#</a> server</h3> <p>Vue.js 2.0 支持了服务端渲染，所有服务端渲染相关的逻辑都在这个目录下。即跑在node上的vue，由服务器直接生成到浏览器渲染，但是部分标记节点保持动态渲染的特性，可以直接使用vue生态的nuxt.js直接使用。</p> <h3 id="shared"><a href="#shared" class="header-anchor">#</a> shared</h3> <p>Vue.js 会定义一些工具方法，这里定义的工具方法都是会被浏览器端的 Vue.js 和服务端的 Vue.js 所共享的。</p> <h2 id="核心结构"><a href="#核心结构" class="header-anchor">#</a> 核心结构</h2> <div class="language- extra-class"><pre class="language-text"><code>core
+├── components        # 组件相关 
+├── global-api        # 全局api
+├── instance          # vue实例核心
+├── observer          # 数据监听、依赖管理（双向绑定相关）
+├── util              # 开发工具函数
+├── vdom              # vdom
+
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/vue/prepare/" class="prev router-link-active">
+        开始
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.30362598.js" defer></script><script src="/assets/js/2.3fd4457c.js" defer></script><script src="/assets/js/12.a09f09f1.js" defer></script>
+  </body>
+</html>
